@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Government Site</title>
+    <style>
+        /* Media query for screens up to 600px */
+        @media only screen and (max-width: 600px) {
+            /* Adjust styles for smaller screens here */
+            header {
+                padding: 10px;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            .menu {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .menu h2 {
+                margin-bottom: 10px;
+            }
+
+            .content {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .image {
+                margin-top: 10px;
+            }
+
+            .person_name {
+                margin-top: 10px;
+            }
+        }
+
+        /* Media query for screens between 601px and 900px */
+        @media only screen and (min-width: 601px) and (max-width: 900px) {
+            /* Adjust styles for screens between 601px and 900px here */
+            header {
+                padding: 15px;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            .menu {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .menu h2 {
+                margin-bottom: 10px;
+            }
+
+            .content {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .image {
+                margin-top: 10px;
+            }
+
+            .person_name {
+                margin-top: 10px;
+            }
+        }
+
+        /* Media query for screens larger than 900px */
+        @media only screen and (min-width: 901px) {
+            /* Adjust styles for larger screens here */
+            body {
+                font-family: Arial, sans-serif;
+            }
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            ul li {
+                display: inline;
+                margin-right: 10px;
+                list-style-type: none;
+            }
+
+            ul li a {
+                text-decoration: none;
+                color: blue;
+            }
+
+            ul li a:hover {
+                color: black;
+            }
+
+            /* main section */
+            main {
+                padding: 20px;
+            }
+
+            .mainTable {
+                display: flex;
+                flex-direction: row;
+            }
+
+            /* menu */
+            .menu {
+                margin: 1rem;
+                width: 20%;
+                padding: 1rem;
+                text-align: center;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            }
+
+            .menu h2 {
+                display: inline-flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 0;
+            }
+            
+            .underline {
+                display: block;
+                height: 4px;
+                background-color: #003366;
+                width: 80%;
+            }
+
+            .list {
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+            }
+
+            .list li {
+                margin: 5px;
+                padding: 10px;
+                cursor: pointer;
+                border-bottom: 1px solid gray;
+                font-size: 1.2rem;
+            }
+
+            /* content */
+            .content {
+                margin: 1rem;
+                width: 80%;
+                padding: 20px;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            }
+
+            .content h3 {
+                display: inline-block;
+                padding: 5px;
+                margin: 0;
+            }
+            
+            .image {
+                text-align: center;
+            }
+            
+            .person_name {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="head"> 
+            <div id="head_logo_name">
+                <img id="dsret" src="dsert_logo.png" alt="">
+                <div id="Logotext">
+                    <h1>GOVERNMENT MAHARANI'S WOMEN'S <br>TEACHER TRAINING INSTITUTE</h1>
+                    <h4>MYSURU</h4>
+                </div>
+                <div class="image-container">
+                    <img id="logo" src="logo.png" alt="">
+                    <img id="govt" src="Govt.png" alt="">
+                </div>
+            </div>
+        </div>
+    
+        <div id="nav-bar">
+            <nav id="nav-bar-text">
+                <a href="index.html" ><h3>Home</h3></a>
+                <a href="media.html"><h3>Media</h3></a> 
+                <div class="dropdown">
+                    <a><h3>About Us</h3></a>
+                    <div class="dropdown-content">
+                        <a href="aboutus.html">College</a>
+                        <a href="government_about_us.html">Government</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a><h3>Resources</h3></a>
+                  <div class="dropdown-content">
+                      <a href="resource_page/resource.html">DELED</a>
+                      <a href ="resource_page/textbook.html">TEXTBOOKS</a>
+                      <a href="resource_page/tet.html">TET</a>
+                  </div>
+              </div>
+                <a href="contact.html"> <h3>Contact us</h3></a>
+                <button id="eng">E</button>
+                <button id="kan">ಕ</button>
+            </nav>
+        </div>
+    </header>  
+
+    <main>
+        <div class="mainTable">
+            <div class="menu">
+                <h2>Government Site <span class="underline"></span></h2>
+                <ul class="list">
+                    <li><a href="#" style="color: black;">Institution</a></li>
+                    <li><a href="./history.html">History</a></li>
+                    <li><a href="./Message.html">Message</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <h2>The College</h2>
+                <div class="image"><img src="images.jpg" alt="No Image"></div>
+                <div class="person_name"><p>Name</p></div>
+                <p>
+                    Bhairab Ganguly College has been contributing to the academic enrichment and development of human resources of its hinterland, encompassing the entire domain of the North suburban locality of Kolkata metropolis, an area belonging to the Northern periphery of the city and its neighouing districts. The college has created and maintained an academic atmosphere that promotes the all-round personality development of the students and enables one to grow to the fullest. The aim of the college is to bring to light the inherent qualities of budding learners, to enlighten the human values and to convey the benefits of higher education to those untouched by the gifts of progress. The excellent faculty of this institution always tries to reach the have-nots and light the candles of hope, joy, justice, harmony and freedom. The college strives to create a learning culture that exemplifies excellence in teaching, promotes lifelong-learning and prepares students for the challenges of tomorrow. Since its inception BGC has shown consistent performance in academics, extra-curricular spheres and extension activities towards the society. The college endeavours constantly to develop as an enabling educational institution, grooming the overall personality of the young citizens with the highest emphasis on ethical and social values.
+                    BGC is a co-educational college and it offers degree courses in all the three main streams in a single shift during the day time. A sprawling 8.33 acres campus unfound in any other nearby college, provides space for higher education, games and cultural facilities which contribute to the holistic development of nearly 5000 strong student coming from all cross-section of the society with varied social, economic, religious and cultural backgrounds. BGC is a government-sponsored college and is recognized u/s 2(f) and 12(b) of the UGC Act.
+                </p>
+                <h3>Vision and Mission <span class="underline"></span></h3>
+                <p>
+                    The Vision of the college is embodied in Swami Vivekananda’s adage originated from ‘The Upanishad’.
+                    “Arise, awake and stop not till the goal is achieved.”
+                    
+                    For the realization of the vision, our mission, in accordance with the Vedic text is:
+                    Charan vai madhu vindati charan swadudumbaram |
+                    Suryasya pasya sremanam yo na tandrayate charan ||
+                    charaiveti
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer">
+        <img id="logof" src="logo.png" alt="">
+        <div id="Logotextf">
+            <h1>GOVERNMENT MAHARANI'S WOMEN'S <br>TEACHER TRAINING INSTITUTE</h1>
+            <h4>MYSURU</h4>
+            <span id="insta"><i class="ri-instagram-line"> Instagram</i></span>
+            <span id="fb"><i class="ri-facebook-circle-line">Facebook</i></span>
+            <span id="x"><i class="ri-twitter-x-line">X/Twitter</i></span> 
+        </div>
+    </div>
+
+    <script>
+        const navbar = document.getElementById('nav-bar');
+        const navbarOffset = navbar.offsetTop;
+
+        function handleScroll() {
+          if (window.scrollY >= navbarOffset) {
+            navbar.classList.add('fixed-navbar');
+          } else {
+            navbar.classList.remove('fixed-navbar');
+          }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+    
+        $(document).ready(function() {
+          $('.dropdown').click(function() {
+            $(this).children('.dropdown-content').toggle();
+          });
+        });
+    </script>
+</body>
+</html>

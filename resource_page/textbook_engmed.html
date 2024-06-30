@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Style.css">    <!--the body,*, nav bar and footer css is being reffered from style.css--> 
+    <link rel="stylesheet" href="textbook.css">   <!-- CSS file for textbooks cards--> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>english medium</title>
+</head>
+<body>
+    <header>
+        <div id="head">
+            <div id="head_logo_name">
+                <img id="dsret" src="../dsert_logo.png" alt="">
+                <div id="Logotext">
+                    <h1>GOVERNMENT MAHARANI'S WOMEN'S <br>TEACHER TRAINING INSTITUTE</h1>
+                    <h4>MYSURU</h4>
+                </div>
+                <div class="image-container">
+                    <img id="logo" src="../logo.png" alt="">
+                    <img id="govt" src="../Govt.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div id="nav-bar">
+            <nav id="nav-bar-text">  
+                <a href="../index.html" ><h3>Home</h3></a>
+                <a href="../media.html"><h3>Media</h3></a>
+                
+                <div class="dropdown">
+                    <a><h3>About Us</h3></a>
+                    <div class="dropdown-content">
+                        <a href="../aboutus.html">College</a>
+                        <a href="../government_about_us.html">Government</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a><h3>Resources</h3></a>
+                    <div class="dropdown-content">
+                        <a href="resource.html">DELED</a>
+                        <a href ="textbook.html">TEXTBOOKS</a>
+                        <a href="tet.html">TET</a>
+                    </div>
+                </div>
+                <a href="../contact.html"> <h3>Contact us</h3></a>
+                <button id="eng">E</button>
+                <button id="kan">ಕ</button>
+            </nav>
+        </div>
+    </header>  
+
+    <section class="resource-section">
+    <div class="textbook-heading">
+        <h1>TEXTBOOKS</h1>
+    </div>
+    <div class="row"> 
+        <div class="card1">
+            <img src="../resource_images/gmwtti_science.avif" alt="EVS">
+            <br>
+            <a href="https://drive.google.com/drive/folders/1_a2BBa1b9ITidlkcd6GCDJVi1eN7gpEG" class="btn">EVS/Science</a>
+        </div>   
+        
+        <div class="card2">
+            <img src="../resource_images/gmwtti_math.jpg" alt="maths">
+            <br>
+            <a href="https://drive.google.com/drive/folders/1tZabd41-TgM5GPirKhSi5tpxXfUbxwBX" class="btn">Mathematics</a>
+        </div>
+    
+        <div class="card3">
+            <img src="../resource_images/gmwtti_social.png" alt="social science">
+            <br>
+            <a href="https://drive.google.com/drive/folders/1Bka7VjyP_KSbNCObTNv_8suPG3kVoAnB" class="btn">Social Science</a>
+        </div>
+    </div>
+
+    <div id="footer">
+        <img id="logof" src="../logo.png" alt="">
+        <div id="Logotextf">
+            <h1>GOVERNMENT MAHARANI'S WOMEN'S <br>TEACHER TRAINING INSTITUTE</h1>
+            <h4>MYSURU</h4>
+            <span id="insta"><i class="ri-instagram-line"> Instagram</i></span>
+            <span id="fb"><i class="ri-facebook-circle-line">Facebook</i></span>
+            <span id="x"><i class="ri-twitter-x-line">X/Twitter</i></span> 
+        </div>
+    </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../Script.js"></script>
+    <script>
+        const navbar = document.getElementById('nav-bar');
+        const navbarOffset = navbar.offsetTop;
+
+        function handleScroll() {
+          if (window.scrollY >= navbarOffset) {
+            navbar.classList.add('fixed-navbar');
+          } else {
+            navbar.classList.remove('fixed-navbar');
+          }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+    
+        $(document).ready(function() {
+          $('.dropdown').click(function() {
+            $(this).children('.dropdown-content').toggle();
+          });
+        });
+    </script>
+</body>
+</html>

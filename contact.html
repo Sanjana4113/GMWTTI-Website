@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">    <!--the body,*, nav bar and footer css is being reffered from style.css--> 
+    <link rel="stylesheet" href="contact.css">   <!--  CSS for the contact form and image background-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Contact</title>
+</head>
+<body>
+  <header>
+    <div id="head">  
+        <div id="head_logo_name">
+            <img id="dsret" src="dsert_logo.png" alt="">
+            <div id="Logotext">
+                <h1>GOVERNMENT MAHARANI'S WOMEN'S <br>TEACHER TRAINING INSTITUTE</h1>
+                <h4>MYSURU</h4>
+            </div>
+            <div class="image-container">
+                <img id="logo" src="logo.png" alt="">
+                <img id="govt" src="Govt.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div id="nav-bar">     
+      <nav id="nav-bar-text">
+        <a href="index.html" ><h3>Home</h3></a>
+        <a href="media.html"><h3>Media</h3></a>
+        <div class="dropdown">
+            <a><h3>About Us</h3></a>
+            <div class="dropdown-content">
+                <a href="aboutus.html">College</a>
+                <a href="government_about_us.html">Government</a>
+            </div>
+        </div>
+        <div class="dropdown">
+              <a><h3>Resources</h3></a>
+          <div class="dropdown-content">
+              <a href="resource_page/resource.html">DELED</a>
+              <a href ="resource_page/textbook.html">TEXTBOOKS</a>
+              <a href="resource_page/tet.html">TET</a>
+          </div>
+        </div>
+        <a href="contact.html"> <h3>Contact us</h3></a>
+        <button id="eng">E</button>
+        <button id="kan">ಕ</button>
+      </nav>
+    </div>
+  </header>  
+
+  <section class="contact-section">
+    <img class="blur-img" src="media_images/1705796184039.jpg" alt="#">
+    <div class="container">
+      <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form action="#" method="post">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required>
+    
+          <label for="email">Your Email:</label>
+          <input type="email" id="email" name="email" required>
+    
+          <label for="message">Your Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+    
+          <button type="submit" class="button">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+               
+  <div id="footer">
+    <img id="logof" src="logo.png" alt="">
+    <div id="Logotextf">
+      <h1>GOVERNMENT MAHARANI'S WOMEN'S <br>TEACHER TRAINING INSTITUTE</h1>
+      <h4>MYSURU</h4>
+      <span id="insta"><i class="ri-instagram-line"> Instagram</i></span>
+      <span id="fb"><i class="ri-facebook-circle-line">Facebook</i></span>
+      <span id="x"><i class="ri-twitter-x-line">X/Twitter</i></span> 
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="Script.js"></script>
+  <script>
+    const navbar = document.getElementById('nav-bar');
+    const navbarOffset = navbar.offsetTop;
+
+    function handleScroll() {
+      if (window.scrollY >= navbarOffset) {
+        navbar.classList.add('fixed-navbar');
+      } else {
+        navbar.classList.remove('fixed-navbar');
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    $(document).ready(function() {
+      $('.dropdown').click(function() {
+        $(this).children('.dropdown-content').toggle();
+      });
+    });
+  </script>
+</body>
+</html>

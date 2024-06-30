@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="Style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    @media only screen and (max-width: 600px) {
+      /* Adjust styles for smaller screens here */
+      .media-card {
+        width: calc(100% - 20px); /* Adjust width to fit smaller screens */
+        height: 200px; /* Reduce height for smaller screens */
+        margin: 10px; /* Adjust margin to create space between cards */
+      }
+
+      .video-cards {
+        width: calc(100% - 20px); /* Adjust width to fit smaller screens */
+        height: 150px; /* Reduce height for smaller screens */
+        margin-left: 0; /* Reset margin-left */
+      }
+
+      .youtube-link button {
+        padding: 8px 25px; /* Adjust button padding for smaller screens */
+        height: 36px; /* Adjust button height for smaller screens */
+      }
+
+      video {
+        width: 100%; /* Make videos responsive */
+        height: auto; /* Make videos responsive */
+      }
+    }
+
+    /* Media query for screens between 600px and 900px */
+    @media only screen and (min-width: 601px) and (max-width: 900px) {
+      /* Adjust styles for screens between 600px and 900px here */
+      .media-card {
+        width: calc(50% - 30px); /* Adjust width for medium screens */
+        height: 250px; /* Adjust height for medium screens */
+        margin: 15px; /* Adjust margin to create space between cards */
+      }
+
+      .video-cards {
+        width: calc(50% - 30px); /* Adjust width for medium screens */
+        height: 200px; /* Adjust height for medium screens */
+        margin-left: 0; /* Reset margin-left */
+      }
+    }
+
+    /* Media query for screens larger than 900px */
+    @media only screen and (min-width: 901px) {
+      /* Adjust styles for larger screens here */
+      .media-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* Ensures the cards wrap to the next line if there isn't enough space */
+      }
+
+      .media-card {
+        width: 350px;
+        height: 300px;
+        margin: 25px; /* Adjust margin to create space between cards */
+        transition: transform 0.5s;
+      }
+
+      .media-card:hover {
+        transform: scale(1.2);
+      }
+
+      .media-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .video-section {
+        width: 100%;
+        height: 500px;
+      }
+
+      .video-cards {
+        width: 300px ;
+        height: 200px;
+        display: inline-block;
+        margin-top: 20px;
+        margin-left: 213px;
+        transition: transform 0.5s;
+      }
+
+      .video-cards:hover {
+        transform: scale(1.2);
+      }
+
+      .img-heading {
+        background-color: white;
+        padding: 10px;
+        text-align: center;
+        margin-top: 25px;
+      }
+
+      .video-heading , .youtube-heading {
+        padding: 10px;
+        margin-top: 40px;
+        background-color: white;
+        text-align: center;
+      }
+
+      .youtube-heading {
+        margin-bottom: 30px;
+      }
+
+      video {
+        height: 250px;
+        width: 400px;
+      }
+
+      .image {
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+        margin: auto;
+        cursor: pointer; /* Set cursor to pointer for indication */
+      }
+
+      .youtube-link {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .youtube-link button {
+        background-color: #bbb;
+        border: 1px solid #e0e0e0;
+        padding: 10px 30px;
+        margin: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        height: 40px;
+        font: 1.5em sans-serif;
+        border-radius: 5px; /* Rounded corners */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      }
+
+      .youtube-link button img {
+        width: 30px;
+        height: auto;
+        margin-right: 10px;
+      }
+
+      .youtube-link button span {
+        font: 1.5em sans-serif;
+        text-decoration: none;
+      }
+
+      .youtube-link a {
+        text-decoration: none;
+      }
+
+      .youtube-link button:hover {
+        background-color: #918d8d;
+        transform: translateY(-2px) scale(1.05); /* Pop and slight scale */
+        transition: transform 0.2s ease-in-out, background 0.2s ease-in-out; /* Smooth transition */
+      }
+
+      .youtube-link button img:hover {
+        transform: rotateZ(5deg); /* Slight icon rotation on hover */
+        transition: transform 0.2s ease-in-out; /* Smooth transition */
+      }
+
+      /* CSS for the modal overlay i.e, the image viewer css*/
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        overflow: auto;
+        animation: fadeIn 0.5s ease-in-out forwards;
+      }
+
+      @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+      }
+
+      .modal-content {
+        display: block;
+        margin: auto;
+        width: 80%;
+        max-width: 800px;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+      }
+
+      .modal-content img {
+        width: 100%;
+        height: 500px;
+        margin-top: 60px;
+        object-fit: cover;  
+      } 
+
+      @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+      }
+
+      .close {
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        color: white;
+        font-size: 100px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      /* Previous and next buttons */
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 10px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 60px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+      }
+
+      .prev {
+        left: 0;
+      }
+
+      .next {
+        right: 0;
+      }
+      
+      /* Animation for closing the modal */
+      .modal-close {
+        animation: fadeOut 0.5s ease-in-out forwards;
+      }
+      
+      @keyframes fadeOut {
+        from {opacity: 1;}
+        to {opacity: 0;}
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div id="head"> 
+      <div id="head_logo_name">
+        <img id="dsret" src="dsert_logo.png" alt="">
+        <div id="Logotext">
+            <h1>GOVERNMENT MAHARANI'S WOMEN'S <br>TEACHER TRAINING INSTITUTE</h1>
+            <h4>MYSURU</h4>
+        </div>
+        <div class="image-container">
+            <img id="logo" src="logo.png" alt="">
+            <img id="govt" src="Govt.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div id="nav-bar">
+      <nav id="nav-bar-text">
+        <a href="index.html" ><h3>Home</h3></a>
+        <a href="media.html"><h3>Media</h3></a>
+        <div class="dropdown">
+          <a><h3>About Us</h3></a>
+          <div class="dropdown-content">
+              <a href="aboutus.html">College</a>
+              <a href="government_about_us.html">Government</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a><h3>Resources</h3></a>
+          <div class="dropdown-content">
+            <a href="resource_page/resource.html">DELED</a>
+            <a href ="resource_page/textbook.html">TEXTBOOKS</a>
+            <a href="resource_page/tet.html">TET</a>
+          </div>
+        </div>
+        <a href="contact.html"> <h3>Contact us</h3></a>
+        <button id="eng">E</button>
+        <button id="kan">ಕ</button>
+      </nav>
+    </div>
+  </header>  
+
+  <section class="media-section">
+    <div class="img-heading">
+      <h1>IMAGES</h1>
+    </div>
+    <div class="media-container">
+      <div class="media-card">
+      <img src="media_images/1705796183845.jpg" alt="Card 1" class="image" id="image1" onclick="toggleFullScreen('image1')"/>
+      </div>
+
+      <div class="media-card">
+      <img src="media_images/1705796183808.jpg" alt="Card 2" class="image" id="image2" onclick="toggleFullScreen('image2')"/>
+      </div>
+
+      <div class="media-card">
+      <img src="media_images/1705796184039.jpg" alt="Card 3" class="image" id="image3" onclick="toggleFullScreen('image3')"/>
+      </div>
+
+      <div class="media-card">
+      <img src="media_images/1705796184077.jpg" alt="Card 4" class="image" id="image4" onclick="toggleFullScreen('image4')"/>
+      </div>
+
+      <div class="media-card">
+      <img src="media_images/media_1.jpg" alt="Card 5" class="image" id="image5" onclick="toggleFullScreen('image5')"/>
+      </div>
+
+      <div class="media-card">
+      <img src="media_images/media_4.jpg" alt="Card 5" class="image" id="image6" onclick="toggleFullScreen('image6')"/>
+      </div>
+
+      <div class="media-card">
+      <img src="media_images/media_6.jpg" alt="Card 5" class="image" id="image7" onclick="toggleFullScreen('image7')"/>
+      </div>
+
+      <div class="media-card">
+      <img src="media_images/media_12.jpg" alt="Card 5" class="image" id="image8" onclick="toggleFullScreen('image8')"/>
+      </div>
+
+      <div class="media-card">
+      <img src="media_images/media2.jpg" alt="Card 5" class="image" id="image9" onclick="toggleFullScreen('image9')"/>
+      </div>
+
+      <div class="media-card">
+      <img src="media_images/media3.jpg" alt="Card 5" class="image" id="image10" onclick="toggleFullScreen('image10')"/>
+      </div>
+
+      <div class="media-card">
+      <img src="media_images/media5.jpg" alt="Card 5" class="image" id="image11" onclick="toggleFullScreen('image11')"/>
+      </div>
+
+      <div class="media-card">
+      <img src="media_images/media7.jpg" alt="Card 5" class="image" id="image12" onclick="toggleFullScreen('image12')"/>
+      </div>
+
+      <div class="media-card">
+      <img src="media_images/media8.jpg" alt="Card 5" class="image" id="image13" onclick="toggleFullScreen('image13')"/>
+      </div>
+
+      <div class="media-card">
+      <img src="media_images/media12.jpg" alt="Card 5" class="image" id="image14" onclick="toggleFullScreen('image14')"/>
+      </div>
+
+      <div class="media-card">
+      <img src="media_images/media10.jpg" alt="Card 5" class="image" id="image15" onclick="toggleFullScreen('image15')"/>
+      </div>
+
+      <div class="media-card">
+      <img src="media_images/media11.jpg" alt="Card 5" class="image" id="image16" onclick="toggleFullScreen('image16')"/>
+      </div>
+    </div>
+  </section>
+    
+  <section class="video-section">
+    <div class="video-heading">
+      <h1>VIDEOS</h1>
+    </div>
+    <div class="video-cards">
+      <video src="VID-20231031-WA0164.mp4" controls frameborder="0" allowfullscreen ></video>
+    </div>
+
+    <div class="video-cards">
+      <video src="CLIP 31-10-23.mp4" controls frameborder="0" allowfullscreen></video>
+    </div>
+
+    <div class="youtube-heading">
+      <h1>YOUTUBE LINKS</h1>
+    </div>
+    <div class="youtube-link">
+      <a href="https://www.youtube.com/channel/UCoCT7J9VfkKplHlKrQaECwQ">
+        <button>
+          <img src="yt.png" alt="YouTube Icon">GMWTTI MYSORE
+        </button>
+      </a>
+      <a href="https://www.youtube.com/results?search_query=diet+mysore">
+        <button>
+          <img src="yt.png" alt="YouTube Icon"> DIET MYSORE
+        </button>
+      </a>
+      <a href="https://www.youtube.com/channel/UCzH3a1-CZoye8GjrlRpxbnQ">
+        <button>
+          <img src="yt.png" alt="YouTube Icon"> DSERT
+        </button>
+      </a>
+      <a href="https://www.youtube.com/c/ncertofficial">
+        <button>
+          <img src="yt.png" alt="YouTube Icon"> NCERT/CIET
+        </button>
+      </a>
+    </div>
+  </section>
+   
+  <div id="footer">
+    <img id="logof" src="logo.png" alt="">
+    <div id="Logotextf">
+      <h1>GOVERNMENT MAHARANI'S WOMEN'S <br>TEACHER TRAINING INSTITUTE</h1>
+      <h4>MYSURU</h4>
+      <span id="insta"><i class="ri-instagram-line"> Instagram</i></span>
+      <span id="fb"><i class="ri-facebook-circle-line">Facebook</i></span>
+      <span id="x"><i class="ri-twitter-x-line">X/Twitter</i></span> 
+    </div>
+  </div>
+  
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+        <img id="modalImage" src="" alt="Fullscreen Image">
+        <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+        <a class="next" onclick="changeImage(1)">&#10095;</a>
+    </div>
+  </div>
+
+  <!--the image viewer js-->
+  <script>
+    let images = [];
+    let currentIndex = 0;
+
+    function toggleFullScreen(imageid) {
+        const image = document.getElementById(imageid);
+        images = Array.from(document.querySelectorAll('.image'));
+        currentIndex = images.findIndex(img => img.id === imageid);
+        const modal = document.getElementById('myModal');
+        const modalImage = document.getElementById('modalImage');
+        modal.style.display = "block";
+        modalImage.src = image.src;
+    }
+
+    function closeModal() {
+        document.getElementById('myModal').style.display = "none";
+    }
+
+    function changeImage(n) {
+        currentIndex += n;
+        if (currentIndex >= images.length) {
+            currentIndex = 0;
+        }
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1;   
+        }
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = images[currentIndex].src;
+    }
+  </script>
+  <script>
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'ArrowLeft') {
+        changeImage(-1); 
+      } else if (event.key === 'ArrowRight') {
+        changeImage(1); 
+      } else if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="Script.js"></script>
+  <script>
+    const navbar = document.getElementById('nav-bar');
+    const navbarOffset = navbar.offsetTop;
+
+    function handleScroll() {
+      if (window.scrollY >= navbarOffset) {
+        navbar.classList.add('fixed-navbar');
+      } else {
+        navbar.classList.remove('fixed-navbar');
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    $(document).ready(function() {
+      $('.dropdown').click(function() {
+        $(this).children('.dropdown-content').toggle();
+      });
+    });
+  </script>
+</body>
+</html>

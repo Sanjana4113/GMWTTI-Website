@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="Style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    @media only screen and (max-width: 600px) {
+      /* Adjust styles for smaller screens here */
+      #abt p {
+        margin-left: 0;
+        margin-top: 20px;
+      }
+
+      .media-card {
+        width: 100%; /* Adjust width to occupy full width */
+      }
+
+      .video-cards {
+        width: 100%; /* Adjust width to occupy full width */
+        margin-left: 0; /* Remove left margin */
+      }
+
+      .video-section video {
+        width: 100%; /* Adjust video width to occupy full width */
+        height: auto; /* Allow height to adjust proportionally */
+      }
+
+      .media-container {
+        justify-content: center; /* Center align cards */
+      }
+    }
+
+    /* Media query for screens between 600px and 900px */
+    @media only screen and (min-width: 601px) and (max-width: 900px) {
+      /* Adjust styles for screens between 600px and 900px here */
+      #abt p {
+        margin-left: 0;
+        margin-top: 20px;
+      }
+
+      .media-card {
+        width: 45%; /* Adjust width for smaller cards */
+      }
+
+      .video-cards {
+        width: 45%; /* Adjust width for smaller video cards */
+      }
+    }
+
+    /* Media query for screens larger than 900px */
+    @media only screen and (min-width: 901px) {
+      /* Adjust styles for larger screens here */
+      .slideshow-container {
+        margin-top: 10px; 
+        position: relative;
+      }
+
+      .mySlides {
+        display: none;
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 460px;
+      }
+
+      .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        cursor: pointer;
+      }
+
+      .active {
+        background-color: #7e7d7d; /* Change color for the active dot */
+      }
+
+      .text-bottom-center {
+        margin-top: -100px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      #vision {
+        padding: 20px;
+        margin-top: 10px;
+        height: 250px;
+        color: white;
+        width: 100%;
+        background-color: #0c2340;
+        text-align: center; /* Center align text */
+      }
+
+      #vision .section-heading {
+        margin-top: 20px;
+        font-size: 40px;
+        margin: 0 auto; /* Center the heading horizontally */
+      }
+
+      #news {
+        height: 230px;
+        width: 100%;
+        background-color: #bbb;
+        text-align: center;
+      }
+
+      #news #news-text {
+        height: 80px;
+        width: 30%;
+        background-color: crimson;
+      }
+
+      #news-text p {
+        font-size: 30px;
+        margin-left: 50px;
+        color: white;
+      }
+
+      #news #new {
+        background-color: crimson;
+        padding-left: 1%;
+        padding-right: 1%;
+      }
+
+      #news button {
+        background-color: #bbb;
+        margin-top: 20px;
+        border: none; /* Remove button borders */
+        font-size: 20px; /* Increase font size */
+        font-family: Arial, sans-serif; /* Add font style */
+        padding: 10px 20px; /* Add padding for better appearance */
+        cursor: pointer; 
+        -webkit-text-fill-color: #101add;
+      }
+
+      #news button:hover {
+        background-color: #34659a;
+        -webkit-text-fill-color: #f4f4f4;
+      }
+
+      #notifications {
+        display: flex;
+        overflow: hidden;
+      }
+
+      #hyperlinks {
+        cursor: pointer;
+        font-size: 25px;
+        margin-top:7px;
+        width: 25%;
+        overflow: hidden;
+        position: relative;
+        animation: moveLeftToRight 10s linear infinite; /* Adjust the duration as needed */
+        animation-delay: 0s;
+      }
+
+      @keyframes fadeIn { /* Define fade-in animation */
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
+
+      @keyframes moveLeftToRight {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(400%);
+        }
+      }
+
+      .highlight {
+        background-color: red;
+        color: white;
+        padding: 0 5px;
+      }
+
+      #border {
+        margin-top: 40px;
+        margin-left: 150px;
+        margin-right: 150px;
+        border: 1px solid white;
+      }
+
+      #pic {
+        background-color: #ffffff;
+        border: 1px solid black;
+        margin-top: 40px;
+        width: 850px;
+        height: 550px;
+        margin-left: 33px;
+      }
+
+      #abt p {
+        justify-content: space-around;
+        font-size: 23px;
+        margin-left: 915px;
+        margin-top: -560px;
+      }
+
+      #info {
+        width: 100%;
+        background-color: #ffffff;
+        height: 630px;
+      }
+
+      #footer {
+        margin-top: 0px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div id="head">
+        <div id="head_logo_name">
+            <img id="dsret" src="dsert_logo.png" alt="">
+            <div id="Logotext">
+                <h1>GOVERNMENT MAHARANI'S WOMEN'S <br>TEACHER TRAINING INSTITUTE</h1>
+                <h4>MYSURU</h4>
+            </div>
+            <div class="image-container">
+                <img id="logo" src="logo.png" alt="">
+                <img id="govt" src="Govt.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div id="nav-bar">     
+      <nav id="nav-bar-text">
+        <a href="index.html" ><h3>Home</h3></a>
+        <a href="media.html"><h3>Media</h3></a>
+        <div class="dropdown">
+          <a><h3>About Us</h3></a>
+          <div class="dropdown-content">
+            <a href="aboutus.html">College</a>
+            <a href="government_about_us.html">Government</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a><h3>Resources</h3></a>
+          <div class="dropdown-content">
+            <a href="resource_page/resource.html">DELED</a>
+            <a href ="resource_page/textbook.html">TEXTBOOKS</a>
+            <a href="resource_page/tet.html">TET</a>
+          </div>
+        </div>
+        <a href="contact.html"> <h3>Contact us</h3></a>
+        <button id="eng">E</button>
+        <button id="kan">ಕ</button>
+      </nav>
+    </div> 
+  </header>  
+
+  <div class="slideshow-container">
+    <div class="mySlides">
+      <img src="slideshow_images/img1.jpeg" alt="Image 1">
+    </div>
+  
+    <div class="mySlides">
+      <img src="slideshow_images/img2.jpeg" alt="Image 2">
+    </div>
+  
+    <div class="mySlides">
+      <img src="slideshow_images/img3.jpeg" alt="Image 3">
+    </div>
+  
+    <div class="mySlides">
+      <img src="slideshow_images/img4.jpeg" alt="Image 4">
+    </div>
+  
+    <div class="mySlides">
+      <img src="slideshow_images/img5.jpeg" alt="Image 5">
+    </div>
+  
+    <div class="mySlides">
+      <img src="slideshow_images/img6.jpeg" alt="Image 6">
+    </div>
+  
+    <div class="text-bottom-center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <div id="news">
+    <div id="news-text">
+      <p>Notifications and circulars  </p>
+    </div>
+    <div id="notifications">
+      <h3 id="hyperlinks">
+        <span class="highlight" id="new">New</span> Sample news hyper links
+      </h3>
+      <h3 id="hyperlinks">
+        <span class="highlight" id="new">New</span> Sample news hyper links
+      </h3>
+    </div>
+    <button>Read all</button>
+  </div>
+
+  <section id="vision" class="section-container">
+    <h1 class="section-heading">Vision</h1>
+    <p>This is a trial professional development section. Yet to add more info!!</p> 
+    <div id="border">
+
+    </div> 
+    <h1 class="section-heading">Mission</h1>
+    <p>This is a trial professional development section. Yet to add more info!!</p>  
+  </section>
+  
+  <section id="info">
+    <div id="Picture">
+      <img id="pic" src="slideshow_images/img1.jpeg" alt="" >
+    </div>
+    <div id="abt">
+      <p>Established in 1928 our institution is one of the esteemed educational institution located in the state of Karnataka.  The four sightedness of the honorable Raja of Mysore  his Excellency Nalwadi Krishna Raja wadiyar provided the foundation for education  of the girl child. This resulted  in the establishment of maharani's girls High school. Very soon realizing the  empowerment of teacher education, especially women teachers, our institution Maharani's Women's  Teacher Training Institute was established in 1928.</p>
+    </div>
+  </section>
+   
+  <div id="footer">
+    <img id="logof" src="logo.png" alt="">
+    <div id="Logotextf">
+      <h1>GOVERNMENT MAHARANI'S WOMEN'S <br>TEACHER TRAINING INSTITUTE</h1>
+      <h4>MYSURU</h4>
+      <span id="insta"><i class="ri-instagram-line"> Instagram</i></span>
+      <span id="fb"><i class="ri-facebook-circle-line">Facebook</i></span>
+      <span id="x"><i class="ri-twitter-x-line">X/Twitter</i></span> 
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="Script.js"></script>
+  <script>
+    const navbar = document.getElementById('nav-bar');
+    const navbarOffset = navbar.offsetTop;
+
+    function handleScroll() {
+      if (window.scrollY >= navbarOffset) {
+        navbar.classList.add('fixed-navbar');
+      } else {
+        navbar.classList.remove('fixed-navbar');
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    $(document).ready(function() {
+      $('.dropdown').click(function() {
+        $(this).children('.dropdown-content').toggle();
+      });
+    });
+  </script>
+</body>
+</html>

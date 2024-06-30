@@ -1,0 +1,123 @@
+/*the body,*, nav bar and footer css is being reffered from style.css*/
+
+/* Media query for screens up to 600px */
+@media only screen and (max-width: 600px) {
+    .card1,
+    .card2,
+    .card3 {
+      width: 90%; /* Adjust width for smaller screens */
+      margin-left: auto; /* Center align cards */
+      margin-right: auto; /* Center align cards */
+    }
+  
+    .card1,
+    .card2,
+    .card3 img {
+      width: 100%; /* Adjust image width to occupy full width of cards */
+      height: auto; /* Allow height to adjust proportionally */
+      border-radius: 0; /* Remove border radius */
+      margin-bottom: 20px; /* Increase margin bottom for better spacing */
+    }
+}
+  
+/* Media query for screens between 600px and 900px */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+    .card1,
+    .card2,
+    .card3 {
+      width: 45%; /* Adjust width for smaller screens */
+      margin-left: 2.5%; /* Add a small left margin for spacing */
+      margin-right: 2.5%; /* Add a small right margin for spacing */
+    }
+}
+  
+/* Media query for screens larger than 900px */
+@media only screen and (min-width: 901px) {
+    .row {
+      display: flex;
+      flex-direction: row;
+    }
+      
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Style the counter cards */
+    .card1 {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+      padding: 16px;
+      text-align: center;
+      background-color: #f1f1f1;
+      margin-left: 110px;
+      width: 350px;
+    }
+    
+    .card2 {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+      padding: 16px;
+      text-align: center;
+      background-color: #f1f1f1;
+      margin-left: 40px;
+      width: 350px;
+    }
+    
+    .card3 {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+      padding: 16px;
+      text-align: center;
+      background-color: #f1f1f1;
+      margin-left: 40px;
+      width: 350px;
+    }
+    
+    .card1 img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    
+    .card2 img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    
+    .card3 img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    
+    .btn {
+      background-color: white;
+      color: black;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    
+    .btn:hover {
+      background-color: rgb(194, 192, 192); 
+    }
+    
+    .tet-heading{
+      background-color: white;
+      padding: 10px;
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+}
+  
